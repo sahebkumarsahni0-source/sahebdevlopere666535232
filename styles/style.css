@@ -1,0 +1,158 @@
+/* लाइट और डार्क थीम के कलर्स */
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-sub: #666666;
+    --border-color: #eaeaea;
+    --accent-color: #007acc;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #f5f5f5;
+    --text-sub: #b0b0b0;
+    --border-color: #333333;
+    --accent-color: #37b0ff;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* थीम बटन स्टाइल */
+.theme-btn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.profile-container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.profile-header .profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-color);
+}
+
+.profile-header h1 {
+    margin: 10px 0 5px 0;
+    font-size: 28px;
+}
+
+.profile-header .tagline {
+    color: var(--text-sub);
+    font-size: 15px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.profile-header .email {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.social-links {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* मोबाइल पर बटन नीचे आ जाएँगे */
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.social-links a.resume-btn {
+    background-color: #28a745;
+}
+
+.section {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.section h2 {
+    font-size: 18px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.section ul {
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.tech-box {
+    background-color: var(--bg-color);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* --- MOBILE RESPONSIVE CODE (फ़ोन के लिए स्पेशल सेटिंग्स) --- */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .profile-container {
+        padding: 20px; /* फ़ोन पर पैडिंग कम ताकि स्क्रीन में फिट बैठे */
+    }
+
+    .profile-header h1 {
+        font-size: 22px; /* छोटा फॉन्ट */
+    }
+
+    .social-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* फ़ोन पर लिंक्स 2-2 की लाइन में दिखेंगे */
+        gap: 8px;
+    }
+
+    .social-links a.resume-btn {
+        grid-column: span 2; /* रिज़्यूमे बटन पूरा बड़ा दिखेगा */
+    }
+}
